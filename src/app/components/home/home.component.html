@@ -1,7 +1,7 @@
 <div class="container dark:bg-slate-800" style="max-width: 600px">
-  <h1 class="title mt-4 has-text-centered">Football Team History</h1>
+  <h1 class="title mt-6 has-text-centered">Football Team History</h1>
 
-  <form (ngSubmit)="onSubmit()" class="mt-5 has-text-centered">
+  <form (ngSubmit)="onSubmit()" class="mt-5 m-1 has-text-centered">
     <input
       class="input is-primary"
       id="textInput"
@@ -18,7 +18,7 @@
 
   <div
     *ngIf="risultati"
-    class="card mt-5 p-4 has-background-primary-10 has-text-primary-10-invert"
+    class="card m-1 mt-5 p-4 has-background-primary-10 has-text-primary-10-invert"
   >
     <h2 class="subtitle is-3 has-text-white pt-3">
       {{ risultati[0].strTeam }}

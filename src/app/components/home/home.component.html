@@ -1,19 +1,43 @@
 <div class="container-fluid">
-
   <h1 class="mt-4">Football Team Story</h1>
 
-<form (ngSubmit)="onSubmit()" class="mt-3">
+  <form (ngSubmit)="onSubmit()" class="mt-3">
     <label for="textInput">Inserisci testo:</label>
-    <input class="input-group mb-3" id="textInput" type="text" [(ngModel)]="inputText" name="textInput">
+    <input
+      class="input-group mb-3"
+      id="textInput"
+      type="text"
+      [(ngModel)]="inputText"
+      name="textInput"
+    />
     <button class="btn btn-primary mx-auto" type="submit">Invia</button>
   </form>
 
-<div *ngIf="risultati" class="card p-4 mt-4">
-<h2 class="fw-semibold">{{risultati[0].strTeam}}</h2>
-<img src="{{risultati[0].strBadge}}" alt="team-logo" class="img-fluid m-4">
-<p>{{risultati[0].strDescriptionIT}}</p>
-</div>
+  <div *ngIf="risultati" class="card p-4 mt-4">
+    <h2 class="fw-semibold">{{ risultati[0].strTeam }}</h2>
+    <img
+      src="{{ risultati[0].strBadge }}"
+      alt="team-logo"
+      class="img-fluid m-4"
+    />
+    <p>
+      <span class="fw-bold">Stadio:</span><br />{{
+        risultati[0].strStadium}}
+    </p>
+    <p *ngIf="risultati[0].strKeywords">
+      <span class="fw-bold">Soprannome:</span><br />{{
+        risultati[0].strKeywords}}
+    </p>
+    <p>
+      <span class="fw-bold">Location:</span><br />{{
+        risultati[0].strLocation}}
+    </p>
+    <p>
+      <span class="fw-bold">Storia:</span><br />{{
+        risultati[0].strDescriptionIT
+      }}
+    </p>
+  </div>
 
-<div *ngIf="risultati === null">la tua squadra non cè</div>
-
+  <div *ngIf="risultati === null" class="m-4 fw-semibold">La tua squadra non c'è 😭</div>
 </div>

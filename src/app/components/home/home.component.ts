@@ -28,12 +28,9 @@ export class HomeComponent {
     'https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=';
 
   onSubmit() {
-    this.submittedText = this.inputText;
-    console.log('Testo inviato:', this.inputText);
-    
+    this.submittedText = this.inputText;    
     this.getTeam(this.inputText).subscribe((data) => {
       this.risultati = data.teams;
-      console.log(this.risultati);
     });
   }
 

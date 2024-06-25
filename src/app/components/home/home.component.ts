@@ -33,6 +33,7 @@ export class HomeComponent {
       this.risultati = data.teams;
     });
     this.inputText = '';
+    console.log(this.risultati)
   }
 
   getTeam(name: string): Observable<Root> {

@@ -1,7 +1,7 @@
 <div class="container dark:bg-slate-800" style="max-width: 600px">
-  <h1 class="title mt-4 has-text-centered	">Football Team Story</h1>
+  <h1 class="title mt-4 has-text-centered">Football Team History</h1>
 
-  <form (ngSubmit)="onSubmit()" class="mt-5 has-text-centered	">
+  <form (ngSubmit)="onSubmit()" class="mt-5 has-text-centered">
     <input
       class="input is-primary"
       id="textInput"
@@ -16,27 +16,35 @@
     </button>
   </form>
 
-  <div *ngIf="risultati" class="card mt-5 p-4 has-background-primary-10 has-text-primary-10-invert">
-    <h2 class="subtitle is-3 has-text-white pt-3">{{ risultati[0].strTeam }}</h2>
+  <div
+    *ngIf="risultati"
+    class="card mt-5 p-4 has-background-primary-10 has-text-primary-10-invert"
+  >
+    <h2 class="subtitle is-3 has-text-white pt-3">
+      {{ risultati[0].strTeam }}
+    </h2>
     <img
       src="{{ risultati[0].strBadge }}"
       alt="team-logo"
       class="image is-1by1 m-4"
     />
     <p class="mb-4">
-      <span class="has-text-white has-text-weight-medium">Stadio:</span><br />{{ risultati[0].strStadium
+      <span class="has-text-white has-text-weight-medium">Stadio:</span><br />{{
+        risultati[0].strStadium
       }}<br />
-      <span class="has-text-white has-text-weight-medium" style="font-size: smaller"
+      <span
+        class="has-text-white has-text-weight-medium"
+        style="font-size: smaller"
         >Capienza: {{ risultati[0].intStadiumCapacity }}</span
       >
     </p>
     <p *ngIf="risultati[0].strKeywords" class="mb-4">
-      <span class="has-text-white has-text-weight-medium">Soprannome:</span><br />{{
-        risultati[0].strKeywords
-      }}
+      <span class="has-text-white has-text-weight-medium">Soprannome:</span
+      ><br />{{ risultati[0].strKeywords }}
     </p>
     <p class="mb-4">
-      <span class="has-text-white has-text-weight-medium">Location:</span><br />{{ risultati[0].strLocation }}
+      <span class="has-text-white has-text-weight-medium">Location:</span
+      ><br />{{ risultati[0].strLocation }}
     </p>
     <p class="mb-4">
       <span class="has-text-white has-text-weight-medium">Storia:</span><br />{{
@@ -45,7 +53,7 @@
     </p>
   </div>
 
-  <div *ngIf="risultati === null" class="m-4 fw-semibold">
+  <div *ngIf="risultati === null" class="mt-4 title is-5">
     La tua squadra non c'è 😭
   </div>
 </div>

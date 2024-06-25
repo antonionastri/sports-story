@@ -32,6 +32,7 @@ export class HomeComponent {
     this.getTeam(this.inputText).subscribe((data) => {
       this.risultati = data.teams;
     });
+    this.inputText = '';
   }
 
   getTeam(name: string): Observable<Root> {

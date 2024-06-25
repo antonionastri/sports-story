@@ -22,7 +22,8 @@
     />
     <p>
       <span class="fw-bold">Stadio:</span><br />{{
-        risultati[0].strStadium}}
+        risultati[0].strStadium}}<br>
+      <span class="fw-bolder" style="font-size: smaller;">Capienza: {{risultati[0].intStadiumCapacity}}</span>
     </p>
     <p *ngIf="risultati[0].strKeywords">
       <span class="fw-bold">Soprannome:</span><br />{{

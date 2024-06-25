@@ -1,0 +1,18 @@
+<div class="container-fluid">
+
+  <h1>Football Team Story</h1>
+
+<form (ngSubmit)="onSubmit()">
+    <label for="textInput">Inserisci testo:</label>
+    <input class="input-group mb-3" id="textInput" type="text" [(ngModel)]="inputText" name="textInput">
+    <button class="btn btn-primary" type="submit">Invia</button>
+  </form>
+
+<div *ngIf="risultati">
+{{risultati[0].strTeam}}
+<p>{{risultati[0].strDescriptionIT}}</p>
+</div>
+
+<div *ngIf="risultati === null">la tua squadra non cè</div>
+
+</div>
